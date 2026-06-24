@@ -95,10 +95,6 @@ The robotic execution stage validates the proposed framework in a real greenhous
 `-- README.md
 ```
 
-## Notes
-
-This repository currently focuses on visual documentation of the proposed autonomous orchid management system. Source code, datasets, model checkpoints, and detailed experimental materials can be added in future updates.
-
 ## Author
 
 Maintained by [ductai243](https://github.com/ductai243).
