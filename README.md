@@ -30,39 +30,45 @@ The system is organized as a sequential pipeline:
 
 ## Workflow
 
+### 0. Proposed Framework
+
+![Proposed Framework](resource/0_overal_system.png)
+
+This figure provides a high-level view of the proposed autonomous Phalaenopsis orchid management framework under dense foliage greenhouse conditions.
+
 ### 1. Overall System
 
-![Overall System](1_overall_system.png)
+![Overall System](resource/1_overall_system.png)
 
 This figure presents the complete autonomous orchid management workflow, connecting visual perception, orientation estimation, rotation planning, and robotic execution.
 
 ### 2. Segmentation Network
 
-![Segmentation Network](2_segmentation_network.png)
+![Segmentation Network](resource/2_segmentation_network.png)
 
 The lightweight dual-path segmentation network extracts fine-grained orchid leaf structures from dense foliage scenes. This stage provides the structural leaf information required for reliable orientation estimation.
 
 ### 3. Detection Network
 
-![Detection Network](3_detection_network.png)
+![Detection Network](resource/3_detection_network.png)
 
 The detection model localizes orchid pots under dense foliage and variable illumination. These detection results are integrated with segmented leaf structures to support plant-level orientation analysis.
 
 ### 4. Rotation Sequence Planning
 
-![Path Planning Network](4_path_planning_network.png)
+![Path Planning Network](resource/4_path_planning_network.png)
 
 The encoder-decoder-based planning model is trained using deep reinforcement learning to optimize the pot rotation sequence. The goal is to reduce redundant robot movements while preserving high computational efficiency.
 
-### 5. Visualization and Experimental Data
+### 5. Orientation Estimation Module
 
-![Visualization Data](5_visualization_data.png)
+![Orientation Estimation Module](resource/5_orientation_estimation_module.png)
 
-This visualization summarizes perception results, orientation estimation performance, and planning outcomes. It supports quantitative comparison and interpretation of the complete perception-planning pipeline.
+This module estimates orchid leaf orientation from segmented structural regions and supports plant-level rotation decision-making.
 
 ### 6. Robotic Execution
 
-![Robotic Execution](6_robotic_execution.png)
+![Robotic Execution](resource/6_robotic_execution.png)
 
 The robotic execution stage validates the proposed framework in a real greenhouse environment. The system achieves autonomous orchid pot rotation based on the optimized manipulation sequence.
 
@@ -78,12 +84,14 @@ The robotic execution stage validates the proposed framework in a real greenhous
 
 ```text
 .
-|-- 1_overall_system.png
-|-- 2_segmentation_network.png
-|-- 3_detection_network.png
-|-- 4_path_planning_network.png
-|-- 5_visualization_data.png
-|-- 6_robotic_execution.png
+|-- resource/
+|   |-- 0_overal_system.png
+|   |-- 1_overall_system.png
+|   |-- 2_segmentation_network.png
+|   |-- 3_detection_network.png
+|   |-- 4_path_planning_network.png
+|   |-- 5_orientation_estimation_module.png
+|   `-- 6_robotic_execution.png
 `-- README.md
 ```
 
